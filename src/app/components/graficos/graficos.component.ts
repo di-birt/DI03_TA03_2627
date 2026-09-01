@@ -38,7 +38,8 @@ export class GraficosComponent implements OnDestroy {
   private renderDona(data: Seleccion[], canvas: HTMLCanvasElement) {
     this.destroyChart('dona');
 
-    const grupos = ['A', 'B', 'C', 'D', 'E', 'F'];
+    //Crea un nuevo Array con los grupos existentes
+    const grupos = [...new Set(data.map(s => s.grupo))].sort();
     const totales = grupos.map(g =>
       data.filter(s => s.grupo === g).reduce((acc, s) => acc + s.goles, 0)
     );
