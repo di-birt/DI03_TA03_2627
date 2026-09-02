@@ -55,12 +55,14 @@ export class GraficosComponent implements OnDestroy {
           backgroundColor: colores,
           borderColor: '#fff',
           borderWidth: 3,
+          //hoverOffset: Cuanto sobresale el "quesito" 
           hoverOffset: 12
         }]
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
+        //cutout: Cuanto hueco queda dentro del doughnout. Si se pone 0, sería como pie chart
         cutout: '60%',
         plugins: {
           legend: {
